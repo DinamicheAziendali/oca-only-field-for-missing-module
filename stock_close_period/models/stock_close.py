@@ -261,7 +261,7 @@ class StockClosePeriodLine(models.Model):
         compute="_compute_amount_line",
         digits="Product Price")
     location_id = fields.Many2one("stock.location", string="Location")
-    lot_id = fields.Many2one("stock.production.lot", string="Lot/Serial Number")
+    lot_id = fields.Many2one("stock.lot", string="Lot/Serial Number")
     owner_id = fields.Many2one("res.partner", string="Owner")
     company_id = fields.Many2one("res.company", string="Company", related="close_id.company_id", store=True)
 

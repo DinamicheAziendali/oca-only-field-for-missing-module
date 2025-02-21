@@ -17,7 +17,7 @@ from odoo.exceptions import UserError
 from odoo.tools import float_is_zero
 from odoo.tools.translate import _
 
-from odoo.addons.l10n_it_account.tools.account_tools import encode_for_export
+# from odoo.addons.l10n_it_account.tools.account_tools import encode_for_export
 
 # from .efattura import EFatturaOut, format_numbers, fpaToEur
 

@@ -10,11 +10,11 @@ from lxml import etree
 from odoo.exceptions import ValidationError
 from odoo.tools.translate import _
 
-from odoo.addons.l10n_it_account.tools.account_tools import (
-    fpa_schema,
-    fpa_schema_etree,
-    fpa_simple_schema,
-)
+# from odoo.addons.l10n_it_account.tools.account_tools import (
+#     fpa_schema,
+#     fpa_schema_etree,
+#     fpa_simple_schema,
+# )
 
 _logger = logging.getLogger(__name__)
 _logger.setLevel(logging.DEBUG)

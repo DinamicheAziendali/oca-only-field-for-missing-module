@@ -2,7 +2,7 @@ from lxml import etree
 
 from odoo.tests.common import TransactionCase
 
-from ..wizard.efattura import _fix_xmlstring
+# from ..wizard.efattura import _fix_xmlstring
 
 
 class TestFixBadURIs(TransactionCase):

@@ -6,7 +6,7 @@ import logging
 from odoo import _, api, fields, models
 from odoo.tools import format_date
 
-from ..wizard import efattura
+# from ..wizard import efattura
 
 _logger = logging.getLogger(__name__)
 

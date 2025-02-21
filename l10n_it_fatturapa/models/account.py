@@ -131,23 +131,23 @@ class WithholdingDataLine(models.Model):
     )
 
 
-class DiscountRisePrice(models.Model):
-    # _position = ['2.1.1.8', '2.2.1.10']
-    _name = "discount.rise.price"
-    _description = "E-invoice Discount Supplement Data"
-
-    name = fields.Selection([("SC", "Discount"), ("MG", "Supplement")], "Type")
-    percentage = fields.Float()
-    amount = fields.Float(digits="Discount")
-    invoice_line_id = fields.Many2one(
-        "account.move.line",
-        "Related Invoice from line",
-        ondelete="cascade",
-        index=True,
-    )
-    invoice_id = fields.Many2one(
-        "account.move", "Related Invoice", ondelete="cascade", index=True
-    )
+# class DiscountRisePrice(models.Model):
+#     # _position = ['2.1.1.8', '2.2.1.10']
+#     _name = "discount.rise.price"
+#     _description = "E-invoice Discount Supplement Data"
+#
+#     name = fields.Selection([("SC", "Discount"), ("MG", "Supplement")], "Type")
+#     percentage = fields.Float()
+#     amount = fields.Float(digits="Discount")
+#     invoice_line_id = fields.Many2one(
+#         "account.move.line",
+#         "Related Invoice from line",
+#         ondelete="cascade",
+#         index=True,
+#     )
+#     invoice_id = fields.Many2one(
+#         "account.move", "Related Invoice", ondelete="cascade", index=True
+#     )
 
 
 class FatturapaRelatedDocumentType(models.Model):
@@ -201,15 +201,15 @@ class FatturapaRelatedDocumentType(models.Model):
     #     self.lineRef = n
 
 
-class FatturapaActivityProgress(models.Model):
-    # _position = ['2.1.7']
-    _name = "fatturapa.activity.progress"
-    _description = "E-invoice activity progress"
-
-    fatturapa_activity_progress = fields.Integer("Activity Progress")
-    invoice_id = fields.Many2one(
-        "account.move", "Related Invoice", ondelete="cascade", index=True
-    )
+# class FatturapaActivityProgress(models.Model):
+#     # _position = ['2.1.7']
+#     _name = "fatturapa.activity.progress"
+#     _description = "E-invoice activity progress"
+#
+#     fatturapa_activity_progress = fields.Integer("Activity Progress")
+#     invoice_id = fields.Many2one(
+#         "account.move", "Related Invoice", ondelete="cascade", index=True
+#     )
 
 
 class FatturaAttachments(models.Model):
@@ -277,36 +277,36 @@ class AccountInvoiceLine(models.Model):
     ftpa_line_number = fields.Integer("Line Number", readonly=True, copy=False)
 
 
-class FatturapaSummaryData(models.Model):
-    # _position = ['2.2.2']
-    _name = "fatturapa.summary.data"
-    _description = "E-invoice summary data"
-    tax_rate = fields.Float()
-
-    # @api.model
-    # def _get_tax_kinds(self):
-    #     return [(t.code, t.name) for t in self.env["account.tax.kind"].search([])]
-
-    non_taxable_nature = fields.Selection(
-        selection="_get_tax_kinds",
-        string="Non taxable nature",
-    )
-    incidental_charges = fields.Float()
-    rounding = fields.Float()
-    amount_untaxed = fields.Float()
-    amount_tax = fields.Float()
-    payability = fields.Selection(
-        [
-            ("I", "Immediate payability"),
-            ("D", "Deferred payability"),
-            ("S", "Split payment"),
-        ],
-        string="VAT payability",
-    )
-    law_reference = fields.Char("Law reference", size=128)
-    invoice_id = fields.Many2one(
-        "account.move", "Related Invoice", ondelete="cascade", index=True
-    )
+# class FatturapaSummaryData(models.Model):
+#     # _position = ['2.2.2']
+#     _name = "fatturapa.summary.data"
+#     _description = "E-invoice summary data"
+#     tax_rate = fields.Float()
+#
+#     # @api.model
+#     # def _get_tax_kinds(self):
+#     #     return [(t.code, t.name) for t in self.env["account.tax.kind"].search([])]
+#
+#     non_taxable_nature = fields.Selection(
+#         selection="_get_tax_kinds",
+#         string="Non taxable nature",
+#     )
+#     incidental_charges = fields.Float()
+#     rounding = fields.Float()
+#     amount_untaxed = fields.Float()
+#     amount_tax = fields.Float()
+#     payability = fields.Selection(
+#         [
+#             ("I", "Immediate payability"),
+#             ("D", "Deferred payability"),
+#             ("S", "Split payment"),
+#         ],
+#         string="VAT payability",
+#     )
+#     law_reference = fields.Char("Law reference", size=128)
+#     invoice_id = fields.Many2one(
+#         "account.move", "Related Invoice", ondelete="cascade", index=True
+#     )
 
 
 class AccountInvoice(models.Model):

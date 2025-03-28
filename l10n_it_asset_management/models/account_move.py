@@ -93,8 +93,8 @@ class AccountMove(models.Model):
     #                 or move.state != "posted"
     #             )
     #
-    # def open_wizard_manage_asset(self):
-    #     self.ensure_one()
+    def open_wizard_manage_asset(self):
+        self.ensure_one()
     #     # do not use invoice_line_ids as it will ignore possible extra lines for not
     #     # deductible VAT
     #     lines = self.line_ids.filtered(lambda line: not line.asset_accounting_info_ids)

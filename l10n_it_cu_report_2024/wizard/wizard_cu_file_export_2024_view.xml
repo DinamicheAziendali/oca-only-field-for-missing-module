@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <record id="wizard_cu_file_export_2024_view" model="ir.ui.view">
+        <field name="name">Export CU SE Certification 2024</field>
+        <field name="model">cu.file.export.2024</field>
+        <field name="arch" type="xml">
+            <form string="Export CU SE Certification 2024">
+                <group col="4">
+                    <group colspan="4">
+                        <field name="cu_txt" readonly="1" filename="file_name" />
+                        <field name="file_name" invisible="1" />
+                    </group>
+                    <footer colspan="4">
+                        <button name="action_export_cu_2024" string="Export" type="object" />
+                        <button special="cancel" string="Close" />
+                    </footer>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_cu_file_export_2024" model="ir.actions.act_window">
+        <field name="name">Export CU SE Certification 2024</field>
+        <field name="res_model">cu.file.export.2024</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="wizard_cu_file_export_2024_view" />
+        <field name="target">new</field>
+    </record>
+
+</odoo>

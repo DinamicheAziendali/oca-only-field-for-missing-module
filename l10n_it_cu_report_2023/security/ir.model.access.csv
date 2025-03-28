@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_cu_file_export_2023_manager,cu_file_export_2023 manager,model_cu_file_export_2023,base.group_user,1,1,1,1

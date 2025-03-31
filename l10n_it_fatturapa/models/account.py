@@ -139,12 +139,12 @@ class DiscountRisePrice(models.Model):
     name = fields.Selection([("SC", "Discount"), ("MG", "Supplement")], "Type")
 #     percentage = fields.Float()
 #     amount = fields.Float(digits="Discount")
-#     invoice_line_id = fields.Many2one(
-#         "account.move.line",
-#         "Related Invoice from line",
-#         ondelete="cascade",
-#         index=True,
-#     )
+    invoice_line_id = fields.Many2one(
+        "account.move.line",
+        "Related Invoice from line",
+        ondelete="cascade",
+        index=True,
+    )
     invoice_id = fields.Many2one(
         "account.move", "Related Invoice", ondelete="cascade", index=True
     )

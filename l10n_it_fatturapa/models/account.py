@@ -287,22 +287,22 @@ class FatturapaSummaryData(models.Model):
 #     # def _get_tax_kinds(self):
 #     #     return [(t.code, t.name) for t in self.env["account.tax.kind"].search([])]
 #
-#     non_taxable_nature = fields.Selection(
-#         selection="_get_tax_kinds",
-#         string="Non taxable nature",
-#     )
-#     incidental_charges = fields.Float()
-#     rounding = fields.Float()
-#     amount_untaxed = fields.Float()
-#     amount_tax = fields.Float()
-#     payability = fields.Selection(
-#         [
-#             ("I", "Immediate payability"),
-#             ("D", "Deferred payability"),
-#             ("S", "Split payment"),
-#         ],
-#         string="VAT payability",
-#     )
+    non_taxable_nature = fields.Selection(
+        selection="_get_tax_kinds",
+        string="Non taxable nature",
+    )
+    incidental_charges = fields.Float()
+    rounding = fields.Float()
+    amount_untaxed = fields.Float()
+    amount_tax = fields.Float()
+    payability = fields.Selection(
+        [
+            ("I", "Immediate payability"),
+            ("D", "Deferred payability"),
+            ("S", "Split payment"),
+        ],
+        string="VAT payability",
+    )
     law_reference = fields.Char("Law reference", size=128)
     invoice_id = fields.Many2one(
         "account.move", "Related Invoice", ondelete="cascade", index=True

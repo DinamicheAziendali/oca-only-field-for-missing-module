@@ -131,12 +131,12 @@ class WithholdingDataLine(models.Model):
     )
 
 
-# class DiscountRisePrice(models.Model):
-#     # _position = ['2.1.1.8', '2.2.1.10']
-#     _name = "discount.rise.price"
-#     _description = "E-invoice Discount Supplement Data"
-#
-#     name = fields.Selection([("SC", "Discount"), ("MG", "Supplement")], "Type")
+class DiscountRisePrice(models.Model):
+    # _position = ['2.1.1.8', '2.2.1.10']
+    _name = "discount.rise.price"
+    _description = "E-invoice Discount Supplement Data"
+
+    name = fields.Selection([("SC", "Discount"), ("MG", "Supplement")], "Type")
 #     percentage = fields.Float()
 #     amount = fields.Float(digits="Discount")
 #     invoice_line_id = fields.Many2one(

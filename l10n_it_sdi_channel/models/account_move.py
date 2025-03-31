@@ -7,7 +7,8 @@ from odoo import models
 class AccountMove(models.Model):
     _inherit = "account.move"
 
-    # def action_open_export_send_sdi(self):
+    def action_open_export_send_sdi(self):
+        return #For test upgrade
     #     """Validate, export and send to SdI the invoices."""
     #     # Validate
     #     self.action_post()

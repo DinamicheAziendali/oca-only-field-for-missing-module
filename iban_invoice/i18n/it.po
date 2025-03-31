@@ -1,0 +1,64 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* iban_invoice
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-02-15 11:57+0000\n"
+"PO-Revision-Date: 2019-02-15 11:57+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: iban_invoice
+#: model:ir.model,name:iban_invoice.model_res_partner_bank
+#: model:ir.ui.menu,name:iban_invoice.menu_iban_invoice_acc_bank
+msgid "Bank Accounts"
+msgstr "Conti Bancari"
+
+#. module: iban_invoice
+#: model:ir.model.fields,field_description:iban_invoice.field_res_partner_bank_transfer_account
+#: model:ir.model.fields,field_description:iban_invoice.field_res_users_bank_transfer_account
+msgid "Bank transfer account"
+msgstr "Conto bonifico"
+
+#. module: iban_invoice
+#: model:ir.ui.menu,name:iban_invoice.menu_iban_invoice_bank
+msgid "Banks"
+msgstr "Banche"
+
+#. module: iban_invoice
+#: model:ir.model,name:iban_invoice.model_account_invoice
+msgid "Invoice"
+msgstr "Fattura"
+
+#. module: iban_invoice
+#: model:ir.model.fields,field_description:iban_invoice.field_res_partner_bank_is_company_bank
+msgid "Is company bank"
+msgstr "Is company bank"
+
+#. module: iban_invoice
+#: model:ir.model.fields,field_description:iban_invoice.field_res_partner_bank_main_bank_transfer_account
+msgid "Main bank transfer account"
+msgstr "Conto principale per bonifico"
+
+#. module: iban_invoice
+#: model:ir.model,name:iban_invoice.model_res_partner
+msgid "Partner"
+msgstr "Partner"
+
+#. module: iban_invoice
+#: model:ir.model,name:iban_invoice.model_sale_advance_payment_inv
+msgid "Sales Advance Payment Invoice"
+msgstr "Anticipo su fattura di vendita"
+
+#. module: iban_invoice
+#: model:ir.model,name:iban_invoice.model_sale_order
+msgid "Sales Order"
+msgstr "Ordine di vendita"
+

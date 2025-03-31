@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<odoo>
+
+    <record id="iban_invoice_res_partner_view" model="ir.ui.view">
+        <field name="name">iban.invoice.res.partner.view</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="account.partner_view_buttons" />
+        <field name="arch" type="xml">
+            <field name="property_account_receivable_id" position="before">
+                <field
+                    name="bank_transfer_account"
+                    domain="[('is_company_bank', '=', True)]"
+                />
+            </field>
+        </field>
+    </record>
+
+    <record id="iban_invoice_partner_bank_form" model="ir.ui.view">
+        <field name="name">iban.invoice.res.partner.bank.form</field>
+        <field name="model">res.partner.bank</field>
+        <field name="inherit_id" ref="base.view_partner_bank_form" />
+        <field name="arch" type="xml">
+            <field name="company_id" position="after">
+                <field name="is_company_bank" attrs="{'invisible':1}" />
+                <field
+                    name="main_bank_transfer_account"
+                    attrs="{'invisible': [('is_company_bank', '=', False)]}"
+                />
+            </field>
+        </field>
+    </record>
+
+</odoo>

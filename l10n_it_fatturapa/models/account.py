@@ -145,9 +145,9 @@ class DiscountRisePrice(models.Model):
 #         ondelete="cascade",
 #         index=True,
 #     )
-#     invoice_id = fields.Many2one(
-#         "account.move", "Related Invoice", ondelete="cascade", index=True
-#     )
+    invoice_id = fields.Many2one(
+        "account.move", "Related Invoice", ondelete="cascade", index=True
+    )
 
 
 class FatturapaRelatedDocumentType(models.Model):
@@ -201,15 +201,15 @@ class FatturapaRelatedDocumentType(models.Model):
     #     self.lineRef = n
 
 
-# class FatturapaActivityProgress(models.Model):
-#     # _position = ['2.1.7']
-#     _name = "fatturapa.activity.progress"
+class FatturapaActivityProgress(models.Model):
+    # _position = ['2.1.7']
+    _name = "fatturapa.activity.progress"
 #     _description = "E-invoice activity progress"
 #
-#     fatturapa_activity_progress = fields.Integer("Activity Progress")
-#     invoice_id = fields.Many2one(
-#         "account.move", "Related Invoice", ondelete="cascade", index=True
-#     )
+    fatturapa_activity_progress = fields.Integer("Activity Progress")
+    invoice_id = fields.Many2one(
+        "account.move", "Related Invoice", ondelete="cascade", index=True
+    )
 
 
 class FatturaAttachments(models.Model):
@@ -277,11 +277,11 @@ class AccountInvoiceLine(models.Model):
     ftpa_line_number = fields.Integer("Line Number", readonly=True, copy=False)
 
 
-# class FatturapaSummaryData(models.Model):
-#     # _position = ['2.2.2']
-#     _name = "fatturapa.summary.data"
-#     _description = "E-invoice summary data"
-#     tax_rate = fields.Float()
+class FatturapaSummaryData(models.Model):
+    # _position = ['2.2.2']
+    _name = "fatturapa.summary.data"
+    _description = "E-invoice summary data"
+    tax_rate = fields.Float()
 #
 #     # @api.model
 #     # def _get_tax_kinds(self):
@@ -303,10 +303,10 @@ class AccountInvoiceLine(models.Model):
 #         ],
 #         string="VAT payability",
 #     )
-#     law_reference = fields.Char("Law reference", size=128)
-#     invoice_id = fields.Many2one(
-#         "account.move", "Related Invoice", ondelete="cascade", index=True
-#     )
+    law_reference = fields.Char("Law reference", size=128)
+    invoice_id = fields.Many2one(
+        "account.move", "Related Invoice", ondelete="cascade", index=True
+    )
 
 
 class AccountInvoice(models.Model):

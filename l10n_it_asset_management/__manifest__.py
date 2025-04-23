@@ -44,12 +44,12 @@
         # "wizard/asset_journal_report_view.xml",
         # "wizard/asset_previsional_report_view.xml",
     ],
-    "assets": {
-        "web.assets_backend": [
-            "l10n_it_asset_management/static/src/js/*",
-            "l10n_it_asset_management/static/src/xml/*",
-        ],
-    },
+    # "assets": {
+        # "web.assets_backend": [
+            # "l10n_it_asset_management/static/src/js/*",
+            # "l10n_it_asset_management/static/src/xml/*",
+        # ],
+    # },
     "development_status": "Beta",
     "installable": True,
     "external_dependencies": {

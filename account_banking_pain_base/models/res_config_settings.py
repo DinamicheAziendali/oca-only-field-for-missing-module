@@ -17,9 +17,9 @@ class ResConfigSettings(models.TransientModel):
     initiating_party_scheme = fields.Char(
         related="company_id.initiating_party_scheme", readonly=False
     )
-    group_pain_multiple_identifier = fields.Boolean(
-        string="Multiple identifiers",
-        # implied_group="account_banking_pain_base." "group_pain_multiple_identifier",
-        help="Enable this option if your country requires several SEPA/PAIN "
-        "identifiers like in Spain.",
-    )
+    # group_pain_multiple_identifier = fields.Boolean(
+    #     string="Multiple identifiers",
+    #     implied_group="account_banking_pain_base." "group_pain_multiple_identifier",
+    #     help="Enable this option if your country requires several SEPA/PAIN "
+    #     "identifiers like in Spain.",
+    # )

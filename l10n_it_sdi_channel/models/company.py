@@ -36,5 +36,5 @@ class AccountConfigSettings(models.TransientModel):
         string="Validate, export and send invoices",
         help="Allow users to validate, export and send invoices to SdI "
         "in one click.",
-        implied_group="l10n_it_sdi_channel.res_groups_validate_send",
+        # implied_group="l10n_it_sdi_channel.res_groups_validate_send",
     )

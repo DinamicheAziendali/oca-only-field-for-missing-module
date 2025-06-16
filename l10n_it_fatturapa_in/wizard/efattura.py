@@ -19,7 +19,7 @@ from odoo.tools.translate import _
 _logger = logging.getLogger(__name__)
 _logger.setLevel(logging.DEBUG)
 
-_root = fpa_schema_etree()
+# _root = fpa_schema_etree()
 
 date_types = {}
 datetime_types = {}
@@ -50,6 +50,7 @@ def collect_element(target, element, parent=None):
 
 
 def collect_elements_by_type_query(target, query):
+    return #add DA
     for element in _root.xpath(query):
         parent_type = get_parent_element(element)
         for parent in _root.xpath(get_type_query(parent_type)):
@@ -61,6 +62,7 @@ def collect_elements_by_type(target, element_type):
 
 
 def collect_types():
+    return  # add DA
     # simpleType, we look at the base of restriction
     for element_type in _root.findall("//{*}simpleType"):
         base = element_type.find("{*}restriction").attrib["base"]

@@ -11,7 +11,6 @@ class AccountMove(models.Model):
     supplier_invoice_number = fields.Char(
         string="Vendor invoice number",
         readonly=True,
-        states={"draft": [("readonly", False)]},
         copy=False,
     )
 

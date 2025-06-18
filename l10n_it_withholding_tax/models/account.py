@@ -316,7 +316,6 @@ class AccountMove(models.Model):
         "Withholding Tax Lines",
         copy=True,
         readonly=True,
-        states={"draft": [("readonly", False)]},
     )
     withholding_tax_amount = fields.Float(
         # compute="_compute_amount_withholding_tax",

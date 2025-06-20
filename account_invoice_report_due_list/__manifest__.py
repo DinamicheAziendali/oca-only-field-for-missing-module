@@ -11,7 +11,8 @@
     "license": "AGPL-3",
     "installable": True,
     "depends": ["account"],
-    "data": ["views/account_invoice_view.xml",
+    "data": [
+        # "views/account_invoice_view.xml",
              # "views/report_invoice.xml"
              ],
 }

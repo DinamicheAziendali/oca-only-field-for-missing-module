@@ -283,13 +283,11 @@
                     <header>
                         <button
                         name="action_set_to_draft"
-                        states="paid"
                         string="Set to Due"
                         type="object"
                     />
                         <button
                         name="action_paid"
-                        states="due"
                         string="Paid"
                         type="object"
                     />

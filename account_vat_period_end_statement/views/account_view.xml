@@ -23,14 +23,12 @@
                     <button
                         name="statement_draft"
                         type="object"
-                        states="confirmed,paid"
                         string="Set to draft"
                     />
                     <button
                         type="object"
                         name="compute_amounts"
                         string="Recompute amounts"
-                        states="draft"
                     />
                     <field
                         name="state"

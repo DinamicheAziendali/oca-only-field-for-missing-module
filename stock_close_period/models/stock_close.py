@@ -21,7 +21,7 @@ class StockClosePeriod(models.Model):
         string="Reference",
         readonly=True,
         required=True,
-        states={"draft": [("readonly", False)], "confirm": [("readonly", False)]},
+        # states={"draft": [("readonly", False)], "confirm": [("readonly", False)]},
     )
     line_ids = fields.One2many(
         "stock.close.period.line",
@@ -29,7 +29,7 @@ class StockClosePeriod(models.Model):
         string="Product",
         copy=True,
         readonly=False,
-        states={"done": [("readonly", True)]},
+        # states={"done": [("readonly", True)]},
     )
     no_recompute_lines = fields.Boolean(
         string="Do not recompute lines",
@@ -51,7 +51,7 @@ class StockClosePeriod(models.Model):
         readonly=True,
         required=True,
         default=fields.Date.context_today,
-        states={"draft": [("readonly", False)]},
+        # states={"draft": [("readonly", False)]},
         help="The date that will be used for the store the product quantity and average"
         " cost.",
     )
@@ -77,7 +77,7 @@ class StockClosePeriod(models.Model):
         string="Last Closed",
         copy=False,
         readonly=True,
-        states={"draft": [("readonly", False)]},
+        # states={"draft": [("readonly", False)]},
     )
     force_archive = fields.Boolean(
         default=False,

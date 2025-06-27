@@ -4,7 +4,7 @@
     "name": "Certificazione Unica",
     "version": "18.0.1.0.1",
     "category": "Localization/Italy",
-    "description": "Modulo per la gestione della Certificazione Unica",
+    "summary": "Modulo per la gestione della Certificazione Unica",
     "author": "Openforce",
     "website": "http://www.openforce.it",
     "license": "LGPL-3",

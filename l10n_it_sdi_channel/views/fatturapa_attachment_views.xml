@@ -15,14 +15,12 @@
             <header position="inside">
                 <button
                     name="send_to_sdi"
-                    states="ready"
                     string="Send to SdI"
                     type="object"
                     class="oe_highlight"
                 />
                 <button
                     name="reset_to_ready"
-                    states="sender_error"
                     string="Reset to ready"
                     type="object"
                 />

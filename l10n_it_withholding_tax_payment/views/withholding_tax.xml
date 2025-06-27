@@ -58,13 +58,11 @@
                     <header>
                         <button
                         name="action_set_to_draft"
-                        states="confirmed"
                         string="Set to Draft"
                         type="object"
                     />
                         <button
                         name="action_confirmed"
-                        states="draft"
                         string="Confirm"
                         type="object"
                     />

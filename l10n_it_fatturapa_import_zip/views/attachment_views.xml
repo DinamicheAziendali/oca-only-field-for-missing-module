@@ -10,14 +10,12 @@
                     <button
                         name="action_import_with_invoice"
                         type="object"
-                        states="draft"
                         string="Import invoices"
                         class="oe_highlight"
                     />
                     <button
                         name="action_import_no_invoice"
                         type="object"
-                        states="draft"
                         string="Import Files (No Invoices)"
                         class="oe_highlight"
                     />

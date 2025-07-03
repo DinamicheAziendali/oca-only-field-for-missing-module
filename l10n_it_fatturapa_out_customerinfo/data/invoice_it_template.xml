@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <template
+        id="customerinfo_line_it_FatturaPA"
+        inherit_id="l10n_it_fatturapa_out.account_invoice_line_it_FatturaPA"
+    >
+        <xpath expr="//DettaglioLinee/CodiceArticolo[@t-if='line.product_id.default_code']" position="after">
+            <CodiceArticolo t-if="line.product_customer_code">
+                <CodiceTipo
+                    t-esc="env['ir.config_parameter'].sudo().get_param('fatturapa.codicetipo.customerinfo', 'ODOO')"
+                />
+                <CodiceValore t-esc="line.product_customer_code[:35]" />
+            </CodiceArticolo>
+        </xpath>
+    </template>
+</odoo>

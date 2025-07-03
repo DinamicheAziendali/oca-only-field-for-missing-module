@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <record id="aruba_sla_request_limit_search" model="ir.ui.view">
+        <field name="name">aruba.sla.request.limit.search</field>
+        <field name="model">aruba.sla.request.limit</field>
+        <field name="arch" type="xml">
+            <search string="Aruba SLA Requests Limits">
+                <field name="endpoint" string="Endpoint"/>
+                <group expand="1" string="Group By">
+                    <filter string="Limit" name="value" context="{'group_by':'value'}"/>
+                    <filter string="Interval" name="interval" context="{'group_by':'interval'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="aruba_sla_request_limit_tree" model="ir.ui.view">
+        <field name="name">aruba.sla.request.limit.tree</field>
+        <field name="model">aruba.sla.request.limit</field>
+        <field name="arch" type="xml">
+            <tree editable="bottom">
+                <field name="endpoint"/>
+                <field name="value"/>
+                <field name="interval"/>
+                <field name="xml_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_aruba_sla_request_limit" model="ir.actions.act_window">
+        <field name="name">Aruba SLA Request Limits</field>
+        <field name="res_model">aruba.sla.request.limit</field>
+        <field name="view_mode">tree</field>
+        <field name="view_id" ref="aruba_sla_request_limit_tree"/>
+        <field name="search_view_id" ref="aruba_sla_request_limit_search"/>
+    </record>
+
+    <menuitem id="menu_aruba_sla_request_limit"
+              action="action_aruba_sla_request_limit"
+              groups="base.group_no_one"
+              name="Aruba SLA Request Limits"
+              parent="account.menu_finance_configuration"
+              sequence="1000"/>
+
+</odoo>

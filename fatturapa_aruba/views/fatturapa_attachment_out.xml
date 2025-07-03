@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record model="ir.ui.view" id="view_fatturapa_out_aruba_attachment_form">
+        <field name="name">view.fatturapa.out.aruba.attachment.form</field>
+        <field name="model">fatturapa.attachment.out</field>
+        <field name="inherit_id" ref="l10n_it_fatturapa_out.view_fatturapa_out_attachment_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//header" position="after">
+                <!-- add double header because some istance should have pec or other way to send FE-->
+                <header>
+                    <button name="send_via_aruba"
+                            string="Invia con Aruba"
+                            type="object"
+                            class="oe_highlight"
+                            attrs="{'invisible':[('aruba_state','!=','pronta')]}"/>
+                    <button name="reset_aruba_state"
+                            string="Reset"
+                            type="object"
+                            class="oe_highlight"
+                            attrs="{'invisible':[('aruba_state','not in',('errore_elaborazione', 'scartata', 'rifiutata'))]}"/>/>
+                    <field name="aruba_state"
+                           widget="statusbar"/>
+                </header>
+            </xpath>
+            <xpath expr="//group/field[@name='name']" position="after">
+                <field name="aruba_filename"/>
+                <field name="sdi_creation_date"/>
+                <field name="sdi_id_number"/>
+            </xpath>
+            <xpath expr="//div[@name='creation_div']" position="after">
+                <label for="aruba_last_response_date" string="Ultima risposta il"/>
+                <div name="aruba_last_response_date">
+                    <field name="aruba_last_response_date" readonly="1"/>
+                </div>
+                <label for="aruba_last_response_text" string="Ultima risposta"/>
+                <div name="aruba_last_response_text">
+                    <field name="aruba_last_response_text" readonly="1"/>
+                </div>
+            </xpath>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="inherit_view_fatturapa_out_attachment_tree">
+        <field name="name">view.fatturapa.out.aruba.attachment.tree</field>
+        <field name="model">fatturapa.attachment.out</field>
+        <field name="inherit_id" ref="l10n_it_fatturapa_out.view_fatturapa_out_attachment_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="field[@name='name']" position="after">
+                <field name="aruba_filename"/>
+            </xpath>
+            <xpath expr="field[@name='out_invoice_ids']" position="before">
+                <field name="aruba_state"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

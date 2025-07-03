@@ -1,0 +1,4 @@
+"id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
+"aruba_sla_request_limit_user","Aruba SLA Request Limit User","model_aruba_sla_request_limit","base.group_user","1","1","1","1"
+"wizard_update_fatturapa_out_xls_user","Wizard Update FatturaPA Out from XLS - User","model_wizard_update_fatturapa_out_xls","base.group_user","1","1","1","1"
+"wizard_send_multi_fatturapa_xls_user","Wizard Send Multi FatturaPA - User","model_wizard_send_multi_fatturapa","base.group_user","1","1","1","1"

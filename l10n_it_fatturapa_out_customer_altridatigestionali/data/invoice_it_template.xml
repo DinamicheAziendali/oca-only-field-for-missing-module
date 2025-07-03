@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <template
+        id="customer_altridatigestionali_line_it_FatturaPA"
+        inherit_id="l10n_it_fatturapa_out.account_invoice_line_it_FatturaPA"
+    >
+        <xpath expr="//DettaglioLinee">
+            <t t-foreach="line.move_id.partner_id.partner_altridatigestionali_ids" t-as="altridatigestionali">
+                <t
+                        t-set="riferimento_testo"
+                        t-value="altridatigestionali._get_riferimento_testo(line)"
+                />
+                <AltriDatiGestionali>
+                    <TipoDato t-esc="encode_for_export(altridatigestionali.tipo_dato, 60)" />
+                    <RiferimentoTesto t-esc="encode_for_export(riferimento_testo or ' ', 60)" />
+                </AltriDatiGestionali>
+            </t>
+        </xpath>
+    </template>
+</odoo>

@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record model="ir.ui.view" id="view_aruba_account_config_settings">
+        <field name="name">view_aruba_account_config_settings</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="l10n_it_fatturapa.view_account_config_settings"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@id='fatturapa_settings']" position="inside">
+                <div class="col-12 col-lg-6 o_setting_box">
+                    <div class="o_setting_left_pane"/>
+                    <div class="o_setting_right_pane">
+                        <span class="fa fa-lg fa-building-o"
+                              title="Values set here are company-specific."
+                              aria-label="Values set here are company-specific."
+                              groups="base.group_multi_company"
+                              role="img"/>
+                        <div name="fatturapa_aruba_settings"
+                             class="content-group">
+                            <div class="row">
+                                <label for="auth_endpoint" class="col-lg-3 o_light_label"/>
+                                <field name="auth_endpoint" readonly="0"/>
+                            </div>
+                            <div class="row">
+                                <label for="endpoint" class="col-lg-3 o_light_label"/>
+                                <field name="endpoint" readonly="0"/>
+                            </div>
+                            <div class="row">
+                                <label for="username" class="col-lg-3 o_light_label"/>
+                                <field name="username" readonly="0"/>
+                            </div>
+                            <div class="row">
+                                <label for="password" class="col-lg-3 o_light_label"/>
+                                <field name="password" readonly="0"/>
+                            </div>
+                            <div class="row">
+                                <label for="aruba_premium_account" class="col-lg-3 o_light_label"/>
+                                <field name="aruba_premium_account" readonly="0"/>
+                            </div>
+                            <div class="row">
+                                <label for="grant_type" class="col-lg-3 o_light_label"/>
+                                <field name="grant_type" readonly="0"/>
+                            </div>
+                            <div class="row">
+                                <label for="aruba_automatic_download" class="col-lg-3 o_light_label"/>
+                                <field name="aruba_automatic_download" readonly="0"/>
+                            </div>
+                            <div class="row">
+                                <label for="aruba_automatic_update" class="col-lg-3 o_light_label"/>
+                                <field name="aruba_automatic_update" readonly="0"/>
+                            </div>
+                            <div attrs="{'invisible':[('aruba_automatic_update', '=', False)]}"
+                                 class="row">
+                                <label for="out_invoices_days_limit" class="col-lg-3 o_light_label"/>
+                                <span>
+                                    <field name="out_invoices_days_limit"
+                                           readonly="0"
+                                           class="oe_inline"/> giorni
+                                </span>
+                            </div>
+                            <div attrs="{'invisible':[('aruba_automatic_download', '=', False)]}"
+                                 class="row">
+                                <label for="in_invoices_days_limit" class="col-lg-3 o_light_label"/>
+                                <span>
+                                    <field name="in_invoices_days_limit"
+                                           readonly="0"
+                                           class="oe_inline"/> giorni
+                                </span>
+                            </div>
+                            <div attrs="{'invisible':[('aruba_automatic_download', '=', False)]}"
+                                 class="row">
+                                <label for="in_invoices_batch_limit" class="col-lg-3 o_light_label"/>
+                                <span>
+                                    <field name="in_invoices_batch_limit"
+                                           readonly="0"
+                                           class="oe_inline"/> fatture
+                                </span>
+                            </div>
+                            <div attrs="{'invisible': [('aruba_automatic_download', '=', False), ('aruba_automatic_update', '=', False)]}"
+                                 class="row">
+                                <label for="receiver_country" class="col-lg-3 o_light_label"/>
+                                <field name="receiver_country"
+                                       readonly="0"
+                                       attrs="{'required': ['&amp;', ('aruba_premium_account', '=', True), '|', ('aruba_automatic_download', '=', True), ('aruba_automatic_update', '=', True)]}"/>
+                            </div>
+                            <div attrs="{'invisible': [('aruba_automatic_download', '=', False), ('aruba_automatic_update', '=', False)]}"
+                                 class="row">
+                                <label for="receiver_vat" class="col-lg-3 o_light_label"/>
+                                <field name="receiver_vat"
+                                       readonly="0"
+                                       attrs="{'required': ['&amp;', ('aruba_premium_account', '=', True), '|', ('aruba_automatic_download', '=', True), ('aruba_automatic_update', '=', True)]}"/>
+                            </div>
+                            <div attrs="{'invisible': [('aruba_automatic_download', '=', False), ('aruba_automatic_update', '=', False)]}"
+                                 class="row">
+                                <label for="receiver_fiscalcode" class="col-lg-3 o_light_label"/>
+                                <field name="receiver_fiscalcode"
+                                       readonly="0"
+                                       attrs="{'required': ['&amp;', ('aruba_premium_account', '=', True), '|', ('aruba_automatic_download', '=', True), ('aruba_automatic_update', '=', True)]}"/>
+                            </div>
+                            <div attrs="{'invisible': [('aruba_automatic_download', '=', False), ('aruba_automatic_update', '=', False)]}"
+                                 class="row">
+                                <label for="error_reviewer_ids" class="col-lg-3 o_light_label"/>
+                                <field name="error_reviewer_ids"
+                                       readonly="0"
+                                       widget="many2many_tags"
+                                       attrs="{'required': ['|', ('aruba_automatic_download', '=', True), ('aruba_automatic_update', '=', True)]}"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

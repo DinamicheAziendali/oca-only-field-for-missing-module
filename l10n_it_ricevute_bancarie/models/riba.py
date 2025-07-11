@@ -9,7 +9,7 @@
 from datetime import date
 
 from odoo import _, api, fields, models
-from odoo.exceptions import Warning as UserError
+from odoo.exceptions import UserError
 
 
 class RibaList(models.Model):

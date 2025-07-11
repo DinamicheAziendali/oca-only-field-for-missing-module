@@ -5,7 +5,7 @@ from lxml import etree
 from odoo import _, api, fields, models
 from odoo.exceptions import ValidationError
 
-from odoo.addons.l10n_it_account.tools.account_tools import encode_for_export
+# from odoo.addons.l10n_it_account.tools.account_tools import encode_for_export
 
 NS_2 = "http://ivaservizi.agenziaentrate.gov.it/docs/xsd/fatture/v2.0"
 VERSION = "DAT20"
@@ -239,16 +239,14 @@ class ComunicazioneDatiIva(models.Model):
         vals["cedente_IdFiscaleIVA_IdCodice"] = partner_vat[2:] if partner_vat else ""
         # ----- Get fiscalcode
         vals["cedente_CodiceFiscale"] = partner.commercial_partner_id.fiscalcode or ""
-        vals["cedente_Denominazione"] = encode_for_export(partner.name, 80)
+        vals["cedente_Denominazione"] = ""
         # Sede
         vals["cedente_sede_Indirizzo"] = "{} {}".format(
-            encode_for_export(partner.street or "", 60),
-            encode_for_export(partner.street2 or "", 60),
+            "",
+            "",
         ).strip()
-        vals["cedente_sede_Cap"] = encode_for_export(
-            partner.zip or "", 5, encoding="ascii"
-        )
-        vals["cedente_sede_Comune"] = encode_for_export(partner.city or "", 60)
+        vals["cedente_sede_Cap"] = ""
+        vals["cedente_sede_Comune"] = ""
         vals["cedente_sede_Provincia"] = (
             partner.state_id and partner.state_id.code or ""
         )
@@ -323,16 +321,14 @@ class ComunicazioneDatiIva(models.Model):
         vals["cessionario_CodiceFiscale"] = (
             partner.commercial_partner_id.fiscalcode or ""
         )
-        vals["cessionario_Denominazione"] = encode_for_export(partner.name or "", 80)
+        vals["cessionario_Denominazione"] = ""
         # Sede
         vals["cessionario_sede_Indirizzo"] = "{} {}".format(
-            encode_for_export(partner.street or "", 60),
-            encode_for_export(partner.street2 or "", 60),
+            "",
+            "",
         ).strip()
-        vals["cessionario_sede_Cap"] = encode_for_export(
-            partner.zip or "", 5, encoding="ascii"
-        )
-        vals["cessionario_sede_Comune"] = encode_for_export(partner.city or "", 60)
+        vals["cessionario_sede_Cap"] = ""
+        vals["cessionario_sede_Comune"] = ""
         vals["cessionario_sede_Provincia"] = (
             partner.state_id and partner.state_id.code or ""
         )
@@ -1472,23 +1468,17 @@ class ComunicazioneDatiIva(models.Model):
             x_2_2_2_1_altri_identificativi_denominazione = etree.SubElement(
                 x_2_2_2_altri_identificativi, etree.QName("Denominazione")
             )
-            x_2_2_2_1_altri_identificativi_denominazione.text = encode_for_export(
-                partner_invoice.cessionario_Denominazione or "", 80
-            )
+            x_2_2_2_1_altri_identificativi_denominazione.text = ""
             # -----             2.2.2.2 - Nome
             x_2_2_2_2_nome = etree.SubElement(
                 x_2_2_2_altri_identificativi, etree.QName("Nome")
             )
-            x_2_2_2_2_nome.text = encode_for_export(
-                partner_invoice.cessionario_Nome or "", 60
-            )
+            x_2_2_2_2_nome.text = ""
             # -----             2.2.2.3 - Cognome
             x_2_2_2_3_cognome = etree.SubElement(
                 x_2_2_2_altri_identificativi, etree.QName("Cognome")
             )
-            x_2_2_2_3_cognome.text = encode_for_export(
-                partner_invoice.cessionario_Cognome or "", 60
-            )
+            x_2_2_2_3_cognome.text = ""
             # -----             2.2.2.4 - Sede
             x_2_2_2_4_sede = etree.SubElement(
                 x_2_2_2_altri_identificativi, etree.QName("Sede")
@@ -1497,26 +1487,18 @@ class ComunicazioneDatiIva(models.Model):
             x_2_2_2_4_1_indirizzo = etree.SubElement(
                 x_2_2_2_4_sede, etree.QName("Indirizzo")
             )
-            x_2_2_2_4_1_indirizzo.text = encode_for_export(
-                partner_invoice.cessionario_sede_Indirizzo or "", 60
-            )
+            x_2_2_2_4_1_indirizzo.text = ""
             # -----                 2.2.2.4.2 - Numero Civico
             x_2_2_2_4_2_numero_civico = etree.SubElement(
                 x_2_2_2_4_sede, etree.QName("NumeroCivico")
             )
-            x_2_2_2_4_2_numero_civico.text = encode_for_export(
-                partner_invoice.cessionario_sede_NumeroCivico or "", 8, encoding="ascii"
-            )
+            x_2_2_2_4_2_numero_civico.text = ""
             # -----                 2.2.2.4.3 - CAP
             x_2_2_2_4_3_cap = etree.SubElement(x_2_2_2_4_sede, etree.QName("CAP"))
-            x_2_2_2_4_3_cap.text = encode_for_export(
-                partner_invoice.cessionario_sede_Cap or "", 5, encoding="ascii"
-            )
+            x_2_2_2_4_3_cap.text = ""
             # -----                 2.2.2.4.4 - Comune
             x_2_2_2_4_4_comune = etree.SubElement(x_2_2_2_4_sede, etree.QName("Comune"))
-            x_2_2_2_4_4_comune.text = encode_for_export(
-                partner_invoice.cessionario_sede_Comune or "", 60
-            )
+            x_2_2_2_4_4_comune.text = ""
             # -----                 2.2.2.4.5 - Provincia
             x_2_2_2_4_5_provincia = etree.SubElement(
                 x_2_2_2_4_sede, etree.QName("Provincia")
@@ -1537,30 +1519,22 @@ class ComunicazioneDatiIva(models.Model):
             x_2_2_2_5_1_indirizzo = etree.SubElement(
                 x_2_2_2_5_stabile_organizzazione, etree.QName("Indirizzo")
             )
-            x_2_2_2_5_1_indirizzo.text = encode_for_export(
-                partner_invoice.cessionario_so_Indirizzo or "", 60
-            )
+            x_2_2_2_5_1_indirizzo.text = ""
             # -----                 2.2.2.5.2 - Numero Civico
             x_2_2_2_5_2_numero_civico = etree.SubElement(
                 x_2_2_2_5_stabile_organizzazione, etree.QName("NumeroCivico")
             )
-            x_2_2_2_5_2_numero_civico.text = encode_for_export(
-                partner_invoice.cessionario_so_NumeroCivico or "", 8, encoding="ascii"
-            )
+            x_2_2_2_5_2_numero_civico.text = ""
             # -----                 2.2.2.5.3 - CAP
             x_2_2_2_5_3_cap = etree.SubElement(
                 x_2_2_2_5_stabile_organizzazione, etree.QName("CAP")
             )
-            x_2_2_2_5_3_cap.text = encode_for_export(
-                partner_invoice.cessionario_so_Cap or "", 5, encoding="ascii"
-            )
+            x_2_2_2_5_3_cap.text = ""
             # -----                 2.2.2.5.4 - Comune
             x_2_2_2_5_4_comune = etree.SubElement(
                 x_2_2_2_5_stabile_organizzazione, etree.QName("Comune")
             )
-            x_2_2_2_5_4_comune.text = encode_for_export(
-                partner_invoice.cessionario_so_Comune or "", 60
-            )
+            x_2_2_2_5_4_comune.text = ""
             # -----                 2.2.2.5.5 - Provincia
             x_2_2_2_5_5_provincia = etree.SubElement(
                 x_2_2_2_5_stabile_organizzazione, etree.QName("Provincia")
@@ -1600,23 +1574,17 @@ class ComunicazioneDatiIva(models.Model):
             x_2_2_2_6_2_denominazione = etree.SubElement(
                 x_2_2_2_6_rappresentante_fiscale, etree.QName("Denominazione")
             )
-            x_2_2_2_6_2_denominazione.text = encode_for_export(
-                partner_invoice.cessionario_rf_Denominazione or "", 80
-            )
+            x_2_2_2_6_2_denominazione.text = ""
             # -----                 2.2.2.6.3 - Nome
             x_2_2_2_6_3_nome = etree.SubElement(
                 x_2_2_2_6_rappresentante_fiscale, etree.QName("Nome")
             )
-            x_2_2_2_6_3_nome.text = encode_for_export(
-                partner_invoice.cessionario_rf_Nome or "", 60
-            )
+            x_2_2_2_6_3_nome.text = ""
             # -----                 2.2.2.6.4 - Cognome
             x_2_2_2_6_4_cognome = etree.SubElement(
                 x_2_2_2_6_rappresentante_fiscale, etree.QName("Cognome")
             )
-            x_2_2_2_6_4_cognome.text = encode_for_export(
-                partner_invoice.cessionario_rf_Cognome or "", 60
-            )
+            x_2_2_2_6_4_cognome.text = ""
 
             for invoice in partner_invoice.fatture_emesse_body_ids:
                 # -----         2.2.3 - Dati Fattura Body DTE
@@ -1887,23 +1855,17 @@ class ComunicazioneDatiIva(models.Model):
             x_3_2_2_1_altri_identificativi_denominazione = etree.SubElement(
                 x_3_2_2_altri_identificativi, etree.QName("Denominazione")
             )
-            x_3_2_2_1_altri_identificativi_denominazione.text = encode_for_export(
-                partner_invoice.cedente_Denominazione or "", 80
-            )
+            x_3_2_2_1_altri_identificativi_denominazione.text = ""
             # -----             2.2.2.2 - Nome
             x_3_2_2_2_nome = etree.SubElement(
                 x_3_2_2_altri_identificativi, etree.QName("Nome")
             )
-            x_3_2_2_2_nome.text = encode_for_export(
-                partner_invoice.cedente_Nome or "", 60
-            )
+            x_3_2_2_2_nome.text = ""
             # -----             2.2.2.3 - Cognome
             x_3_2_2_3_cognome = etree.SubElement(
                 x_3_2_2_altri_identificativi, etree.QName("Cognome")
             )
-            x_3_2_2_3_cognome.text = encode_for_export(
-                partner_invoice.cedente_Cognome or "", 60
-            )
+            x_3_2_2_3_cognome.text = ""
             # -----             2.2.2.4 - Sede
             x_3_2_2_4_sede = etree.SubElement(
                 x_3_2_2_altri_identificativi, etree.QName("Sede")
@@ -1912,26 +1874,18 @@ class ComunicazioneDatiIva(models.Model):
             x_3_2_2_4_1_indirizzo = etree.SubElement(
                 x_3_2_2_4_sede, etree.QName("Indirizzo")
             )
-            x_3_2_2_4_1_indirizzo.text = encode_for_export(
-                partner_invoice.cedente_sede_Indirizzo or "", 60
-            )
+            x_3_2_2_4_1_indirizzo.text = ""
             # -----                 2.2.2.4.2 - Numero Civico
             x_3_2_2_4_2_numero_civico = etree.SubElement(
                 x_3_2_2_4_sede, etree.QName("NumeroCivico")
             )
-            x_3_2_2_4_2_numero_civico.text = encode_for_export(
-                partner_invoice.cedente_sede_NumeroCivico or "", 8, encoding="ascii"
-            )
+            x_3_2_2_4_2_numero_civico.text = ""
             # -----                 2.2.2.4.3 - CAP
             x_3_2_2_4_3_cap = etree.SubElement(x_3_2_2_4_sede, etree.QName("CAP"))
-            x_3_2_2_4_3_cap.text = encode_for_export(
-                partner_invoice.cedente_sede_Cap or "", 5, encoding="ascii"
-            )
+            x_3_2_2_4_3_cap.text = ""
             # -----                 2.2.2.4.4 - Comune
             x_3_2_2_4_4_comune = etree.SubElement(x_3_2_2_4_sede, etree.QName("Comune"))
-            x_3_2_2_4_4_comune.text = encode_for_export(
-                partner_invoice.cedente_sede_Comune or "", 60
-            )
+            x_3_2_2_4_4_comune.text = ""
             # -----                 2.2.2.4.5 - Provincia
             x_3_2_2_4_5_provincia = etree.SubElement(
                 x_3_2_2_4_sede, etree.QName("Provincia")
@@ -1950,30 +1904,22 @@ class ComunicazioneDatiIva(models.Model):
             x_3_2_2_5_1_indirizzo = etree.SubElement(
                 x_3_2_2_5_stabile_organizzazione, etree.QName("Indirizzo")
             )
-            x_3_2_2_5_1_indirizzo.text = encode_for_export(
-                partner_invoice.cedente_so_Indirizzo or "", 60
-            )
+            x_3_2_2_5_1_indirizzo.text = ""
             # -----                 2.2.2.5.2 - Numero Civico
             x_3_2_2_5_2_numero_civico = etree.SubElement(
                 x_3_2_2_5_stabile_organizzazione, etree.QName("NumeroCivico")
             )
-            x_3_2_2_5_2_numero_civico.text = encode_for_export(
-                partner_invoice.cedente_so_NumeroCivico or "", 8, encoding="ascii"
-            )
+            x_3_2_2_5_2_numero_civico.text = ""
             # -----                 2.2.2.5.3 - CAP
             x_3_2_2_5_3_cap = etree.SubElement(
                 x_3_2_2_5_stabile_organizzazione, etree.QName("CAP")
             )
-            x_3_2_2_5_3_cap.text = encode_for_export(
-                partner_invoice.cedente_so_Cap or "", 5, encoding="ascii"
-            )
+            x_3_2_2_5_3_cap.text = ""
             # -----                 2.2.2.5.4 - Comune
             x_3_2_2_5_4_comune = etree.SubElement(
                 x_3_2_2_5_stabile_organizzazione, etree.QName("Comune")
             )
-            x_3_2_2_5_4_comune.text = encode_for_export(
-                partner_invoice.cedente_so_Comune or "", 60
-            )
+            x_3_2_2_5_4_comune.text = ""
             # -----                 2.2.2.5.5 - Provincia
             x_3_2_2_5_5_provincia = etree.SubElement(
                 x_3_2_2_5_stabile_organizzazione, etree.QName("Provincia")
@@ -2013,23 +1959,17 @@ class ComunicazioneDatiIva(models.Model):
             x_3_2_2_6_2_denominazione = etree.SubElement(
                 x_3_2_2_6_rappresentante_fiscale, etree.QName("Denominazione")
             )
-            x_3_2_2_6_2_denominazione.text = encode_for_export(
-                partner_invoice.cedente_rf_Denominazione or "", 80
-            )
+            x_3_2_2_6_2_denominazione.text = ""
             # -----                 2.2.2.6.3 - Nome
             x_3_2_2_6_3_nome = etree.SubElement(
                 x_3_2_2_6_rappresentante_fiscale, etree.QName("Nome")
             )
-            x_3_2_2_6_3_nome.text = encode_for_export(
-                partner_invoice.cedente_rf_Nome or "", 60
-            )
+            x_3_2_2_6_3_nome.text = ""
             # -----                 2.2.2.6.4 - Cognome
             x_3_2_2_6_4_cognome = etree.SubElement(
                 x_3_2_2_6_rappresentante_fiscale, etree.QName("Cognome")
             )
-            x_3_2_2_6_4_cognome.text = encode_for_export(
-                partner_invoice.cedente_rf_Cognome or "", 60
-            )
+            x_3_2_2_6_4_cognome.text = ""
 
             for invoice in partner_invoice.fatture_ricevute_body_ids:
                 # -----         2.2.3 - Dati Fattura Body DTE

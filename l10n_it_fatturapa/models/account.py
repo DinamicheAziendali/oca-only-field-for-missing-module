@@ -137,8 +137,8 @@ class DiscountRisePrice(models.Model):
     _description = "E-invoice Discount Supplement Data"
 
     name = fields.Selection([("SC", "Discount"), ("MG", "Supplement")], "Type")
-#     percentage = fields.Float()
-#     amount = fields.Float(digits="Discount")
+    percentage = fields.Float()
+    amount = fields.Float(digits="Discount")
     invoice_line_id = fields.Many2one(
         "account.move.line",
         "Related Invoice from line",

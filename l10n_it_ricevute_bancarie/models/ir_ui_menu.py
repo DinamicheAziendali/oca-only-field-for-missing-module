@@ -12,6 +12,7 @@ class IrUiMenu(models.Model):
         new_parent_id = vals.get("parent_id")
 
         res = super().write(vals)
+        return res #for upgrade to v18
 
         if new_parent_id:
             # Move the RiBa menu if any of

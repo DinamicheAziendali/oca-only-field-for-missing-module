@@ -59,8 +59,6 @@ class StockMove(models.Model):
 class StockMoveLine(models.Model):
     _inherit = "stock.move.line"
 
-    company_id = fields.Many2one(related="move_id.company_id", store=True)
-
     def _get_last_closing(self, closing_id, product_id, company_id):
         # default value
         start_qty = 0

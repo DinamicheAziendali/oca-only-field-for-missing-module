@@ -59,8 +59,6 @@ class StockMove(models.Model):
 class StockMoveLine(models.Model):
     _inherit = "stock.move.line"
 
-    # add field to manage closed lines
-    active = fields.Boolean(related="move_id.active", store=True, default=True)
     company_id = fields.Many2one(related="move_id.company_id", store=True)
 
     def _get_last_closing(self, closing_id, product_id, company_id):

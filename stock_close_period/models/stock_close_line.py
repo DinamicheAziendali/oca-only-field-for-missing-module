@@ -29,7 +29,12 @@ class StockClosePeriodLine(models.Model):
         index=True,
         required=True,
     )
-    product_name = fields.Char(related="product_id.name", store=True, readonly=True)
+    product_name = fields.Char(
+        related="product_id.name",
+        store=True,
+        index="trigram",
+        translate=True,
+    )
     product_code = fields.Char(
         related="product_id.default_code", store=True, readonly=True
     )

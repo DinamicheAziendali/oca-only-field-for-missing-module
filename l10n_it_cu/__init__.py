@@ -1,5 +1,0 @@
-# Copyright 2022-TODAY Openforce Srls Unipersonale (www.openforce.it)
-# License LGPL-3.0 or later (https://www.gnu.org/licenses/lgpl).
-
-from . import wizard
-from . import models

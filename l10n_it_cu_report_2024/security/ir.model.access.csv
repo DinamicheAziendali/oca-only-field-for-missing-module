@@ -1,2 +1,0 @@
-id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_cu_file_export_2024_manager,cu_file_export_2024 manager,model_cu_file_export_2024,base.group_user,1,1,1,1

@@ -18,7 +18,7 @@
         # "views/res_partner_view.xml",
         # "views/account_move_view.xml",
         # "views/account_view.xml",
-        # "data/fiscal.document.type.csv",
+        "data/fiscal.document.type.csv",
         # "security/ir.model.access.csv",
     ],
     "installable": True,

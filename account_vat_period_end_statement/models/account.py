@@ -778,6 +778,7 @@ class StatementGenericAccountLine(models.Model):
 
 class AccountTax(models.Model):
     _inherit = "account.tax"
+    exclude_from_vat_settlements = fields.Boolean(string="Exclude from VAT settlements")
     vat_statement_account_id = fields.Many2one(
         "account.account",
         "Account used for VAT statement",

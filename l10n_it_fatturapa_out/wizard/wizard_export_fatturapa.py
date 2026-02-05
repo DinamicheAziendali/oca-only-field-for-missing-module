@@ -47,10 +47,10 @@ class WizardExportFatturapa(models.TransientModel):
     #     ret = [(str(r.id), r.name) for r in reports]
     #     return ret
 
-    report_print_menu = fields.Selection(
-        selection="_get_selection",
-        help="This report will be automatically included in the created XML",
-    )
+    # report_print_menu = fields.Selection(
+    #     selection="_get_selection",
+    #     help="This report will be automatically included in the created XML",
+    # )
 
     # def saveAttachment(self, fatturapa, number):
     #     attach_obj = self.env["fatturapa.attachment.out"]

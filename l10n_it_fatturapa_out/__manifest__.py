@@ -35,10 +35,10 @@
         # "security/rules.xml",
     ],
     "installable": True,
-    "external_dependencies": {
-        "python": [
-            "unidecode",
-            "elementpath",
-        ],
-    },
+    # "external_dependencies": {
+    #     "python": [
+    #         "unidecode",
+    #         "elementpath",
+    #     ],
+    # },
 }

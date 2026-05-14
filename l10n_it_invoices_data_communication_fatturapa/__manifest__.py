@@ -5,7 +5,7 @@
     "name": "ITA - Comunicazione dati fatture - " "Integrazione e-fattura",
     "summary": "Integrazione fatturazione elettronica e comunicazione dati "
     'fatture (c.d. "nuovo spesometro")',
-    "version": "18.0.1.0.0",
+    "version": "19.0.1.0.0",
     "category": "Hidden",
     "author": "Agile Business Group, Odoo Community Association (OCA)",
     "website": "https://github.com/OCA/l10n-italy",

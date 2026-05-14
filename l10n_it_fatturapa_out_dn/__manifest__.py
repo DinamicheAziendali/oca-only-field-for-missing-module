@@ -2,7 +2,7 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 {
     "name": "ITA - Fattura elettronica - Emissione - DDT",
-    "version": "18.0.1.1.0",
+    "version": "19.0.1.1.0",
     "development_status": "Beta",
     "category": "Localization/Italy",
     "summary": "DDT in fatture elettroniche",

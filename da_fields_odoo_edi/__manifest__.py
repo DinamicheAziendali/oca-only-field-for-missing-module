@@ -6,7 +6,7 @@
 
 {
     "name": "DA - Add in partner field from l10n_it_edi",
-    "version": "18.0.1.0.0",
+    "version": "19.0.1.0.0",
     "author": "Dinamiche Aziendali srl",
     "category": "DA Tools",
     "summary": "Add in partner field fiscalcode and pec from l10n_it_edi",

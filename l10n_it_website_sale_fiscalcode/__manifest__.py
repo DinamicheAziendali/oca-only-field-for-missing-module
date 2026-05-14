@@ -6,7 +6,7 @@
     "name": "Website Sale FiscalCode",
     "category": "e-commerce",
     "author": "Agile Business Group," "Odoo Community Association (OCA)",
-    "version": "18.0.1.0.1",
+    "version": "19.0.1.0.1",
     "license": "AGPL-3",
     "website": "https://github.com/OCA/l10n-italy"
     "/tree/14.0/l10n_it_website_sale_fiscalcode",

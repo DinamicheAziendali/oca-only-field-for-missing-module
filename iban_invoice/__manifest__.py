@@ -2,7 +2,7 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 {
     "name": "Iban invoice",
-    "version": "18.0.1.0.1",
+    "version": "19.0.1.0.1",
     "category": "Account",
     "website": "https://www.dinamicheaziendali.it/",
     "author": "ApuliaSoftware S.r.l., Dinamiche Aziendali srl",

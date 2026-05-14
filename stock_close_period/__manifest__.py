@@ -7,7 +7,7 @@
 {
     "name": "Stock Close Period",
     "summary": "Stock Close Period",
-    "version": "18.0.1.0.0",
+    "version": "19.0.1.0.0",
     "category": "Stock",
     "author": "Pordenone Linux User Group (PNLUG), Odoo Community Association (OCA),"
     "Dinamiche Aziendali srl, Sergio Corato",

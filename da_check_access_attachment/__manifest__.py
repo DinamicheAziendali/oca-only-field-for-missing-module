@@ -5,7 +5,7 @@
 
 {
     "name": "DA - Check Access Attachment",
-    "version": "18.0.1.0.1",
+    "version": "19.0.1.0.1",
     "author": "Dinamiche Aziendali srl",
     "category": "DA Tools/Access",
     "summary": "Bypassare il check di Odoo sugli attachment",

@@ -5,7 +5,7 @@
 
 {
     "name": "ITA - Gestione CIG/CUP",
-    "version": "18.0.1.0.0",
+    "version": "19.0.1.0.0",
     "category": "Localization/Italy",
     "summary": "Gestione CIG/CUP",
     "author": "Dinamiche Aziendali srl, Odoo Community Association (OCA)",

@@ -5,7 +5,7 @@
 {
     "name": "ITA - Ritenuta d'acconto - Pagamenti",
     "summary": "Gestisce le ritenute sulle fatture e sui pagamenti",
-    "version": "18.0.1.0.0",
+    "version": "19.0.1.0.0",
     "development_status": "Beta",
     "category": "Localization/Italy",
     "website": "https://github.com/OCA/l10n-italy",

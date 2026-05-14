@@ -10,7 +10,7 @@ import zipfile
 from lxml import etree
 
 from odoo import _, api, fields, models
-from odoo.fields import first
+# from odoo.fields import first
 
 FATTURAPA_IN_REGEX = (
     "^(IT[a-zA-Z0-9]{11,16}|"

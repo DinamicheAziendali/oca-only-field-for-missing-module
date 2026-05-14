@@ -11,7 +11,7 @@ import lxml.etree as ET
 
 from odoo import api, fields, models
 from odoo.exceptions import UserError, ValidationError
-from odoo.modules import get_module_resource
+# from odoo.modules import get_module_resource
 from odoo.tools.translate import _
 
 _logger = logging.getLogger(__name__)

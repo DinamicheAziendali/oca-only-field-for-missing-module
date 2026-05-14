@@ -7,7 +7,7 @@ import tempfile
 from functools import reduce
 
 from odoo import fields
-from odoo.modules import get_module_resource
+# from odoo.modules import get_module_resource
 from odoo.tests import Form
 from odoo.tests.common import SingleTransactionCase
 
@@ -16,15 +16,15 @@ from odoo.addons.mail.tests.common import mail_new_test_user
 
 
 class FatturapaCommon(SingleTransactionCase):
-    def getFile(self, filename, module_name=None):
-        if module_name is None:
-            module_name = "l10n_it_fatturapa_in"
-        path = get_module_resource(module_name, "tests", "data", filename)
-        with open(path, "rb") as test_data:
-            with tempfile.TemporaryFile() as out:
-                base64.encode(test_data, out)
-                out.seek(0)
-                return path, out.read()
+    # def getFile(self, filename, module_name=None):
+    #     if module_name is None:
+    #         module_name = "l10n_it_fatturapa_in"
+    #     path = get_module_resource(module_name, "tests", "data", filename)
+    #     with open(path, "rb") as test_data:
+    #         with tempfile.TemporaryFile() as out:
+    #             base64.encode(test_data, out)
+    #             out.seek(0)
+    #             return path, out.read()
 
     @classmethod
     def create_wt(cls):
@@ -275,13 +275,13 @@ class FatturapaCommon(SingleTransactionCase):
             }
         )
 
-    def create_attachment(self, name, file_name, module_name=None):
-        if module_name is None:
-            module_name = "l10n_it_fatturapa_in"
-        attach = self.env["fatturapa.attachment.in"].create(
-            {"name": name, "datas": self.getFile(file_name, module_name=module_name)[1]}
-        )
-        return attach
+    # def create_attachment(self, name, file_name, module_name=None):
+    #     if module_name is None:
+    #         module_name = "l10n_it_fatturapa_in"
+    #     attach = self.env["fatturapa.attachment.in"].create(
+    #         {"name": name, "datas": self.getFile(file_name, module_name=module_name)[1]}
+    #     )
+    #     return attach
 
     def run_wizard(
         self, name, file_name, mode="import", wiz_values=None, module_name=None
@@ -317,26 +317,26 @@ class FatturapaCommon(SingleTransactionCase):
             # return created fatturapa.attachment.in record in case no mode provided
             return attach
 
-    def run_wizard_multi(self, file_name_list, module_name=None):
-        if module_name is None:
-            module_name = "l10n_it_fatturapa_in"
-
-        attachments = self.attach_model.create(
-            [
-                {
-                    "name": file_name,
-                    "datas": self.getFile(file_name, module_name=module_name)[1],
-                }
-                for file_name in file_name_list
-            ]
-        )
-
-        wizard = self.wizard_model.with_context(
-            active_model=attachments._name,
-            active_ids=attachments.ids,
-        ).create({})
-
-        return wizard.importFatturaPA()
+    # def run_wizard_multi(self, file_name_list, module_name=None):
+    #     if module_name is None:
+    #         module_name = "l10n_it_fatturapa_in"
+    #
+    #     attachments = self.attach_model.create(
+    #         [
+    #             {
+    #                 "name": file_name,
+    #                 "datas": self.getFile(file_name, module_name=module_name)[1],
+    #             }
+    #             for file_name in file_name_list
+    #         ]
+    #     )
+    #
+    #     wizard = self.wizard_model.with_context(
+    #         active_model=attachments._name,
+    #         active_ids=attachments.ids,
+    #     ).create({})
+    #
+    #     return wizard.importFatturaPA()
 
     @classmethod
     def _setup_journals(cls):

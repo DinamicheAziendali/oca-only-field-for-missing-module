@@ -129,6 +129,7 @@ class TestAccountPaymentPartner(BaseCommon):
             {
                 "acc_number": "5345345",
                 "partner_id": cls.supplier.id,
+                "allow_out_payment": True,
             }
         )
         cls.supplier.with_company(

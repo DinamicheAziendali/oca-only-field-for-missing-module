@@ -9,15 +9,15 @@ msgstr ""
 "Project-Id-Version: Odoo Server 11.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-05-25 12:38+0000\n"
-"PO-Revision-Date: 2023-04-12 10:07+0000\n"
-"Last-Translator: gelo joga Rodríguez <gelo.joga@factorlibre.com>\n"
+"PO-Revision-Date: 2026-05-10 09:13+0000\n"
+"Last-Translator: Ed-Spain <eduamoros@gmail.com>\n"
 "Language-Team: Spanish (https://www.transifex.com/oca/teams/23907/es/)\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.14.1\n"
+"X-Generator: Weblate 5.15.2\n"
 
 #. module: account_payment_partner
 #: model_terms:ir.ui.view,arch_db:account_payment_partner.account_payment_mode_form
@@ -42,7 +42,6 @@ msgstr "<strong>Modo de pago:</strong>"
 #. module: account_payment_partner
 #: model:ir.model.fields,help:account_payment_partner.field_account_bank_statement_line__bank_account_required
 #: model:ir.model.fields,help:account_payment_partner.field_account_move__bank_account_required
-#: model:ir.model.fields,help:account_payment_partner.field_account_payment__bank_account_required
 msgid ""
 "Activate this option if this payment method requires you to know the bank "
 "account number of your customer or supplier."
@@ -51,21 +50,8 @@ msgstr ""
 "cuenta bancaria de tu cliente o proveedor."
 
 #. module: account_payment_partner
-#: model:ir.model.fields,help:account_payment_partner.field_account_bank_statement_line__partner_bank_id
-#: model:ir.model.fields,help:account_payment_partner.field_account_move__partner_bank_id
-msgid ""
-"Bank Account Number to which the invoice will be paid. A Company bank "
-"account if this is a Customer Invoice or Vendor Credit Note, otherwise a "
-"Partner bank account number."
-msgstr ""
-"Número de cuenta bancaria a la que se pagará la factura. Una cuenta bancaria "
-"de la empresa si se trata de una factura de cliente o una nota de crédito de "
-"proveedor; de lo contrario, un número de cuenta bancaria del contacto."
-
-#. module: account_payment_partner
 #: model:ir.model.fields,field_description:account_payment_partner.field_account_bank_statement_line__bank_account_required
 #: model:ir.model.fields,field_description:account_payment_partner.field_account_move__bank_account_required
-#: model:ir.model.fields,field_description:account_payment_partner.field_account_payment__bank_account_required
 msgid "Bank Account Required"
 msgstr "Cuenta bancaria requerida"
 
@@ -73,6 +59,16 @@ msgstr "Cuenta bancaria requerida"
 #: model:ir.model.fields,field_description:account_payment_partner.field_account_payment_mode__show_bank_account_from_journal
 msgid "Bank account from journals"
 msgstr "Cuenta bancaria de los diarios"
+
+#. module: account_payment_partner
+#: model:ir.model,name:account_payment_partner.model_res_company
+msgid "Companies"
+msgstr "Empresas"
+
+#. module: account_payment_partner
+#: model:ir.model,name:account_payment_partner.model_res_config_settings
+msgid "Config Settings"
+msgstr "Ajustes de configuración"
 
 #. module: account_payment_partner
 #: model:ir.model,name:account_payment_partner.model_res_partner
@@ -98,7 +94,6 @@ msgstr "Completo"
 #. module: account_payment_partner
 #: model:ir.model.fields,field_description:account_payment_partner.field_account_bank_statement_line__has_reconciled_items
 #: model:ir.model.fields,field_description:account_payment_partner.field_account_move__has_reconciled_items
-#: model:ir.model.fields,field_description:account_payment_partner.field_account_payment__has_reconciled_items
 msgid "Has Reconciled Items"
 msgstr "Tiene apuntes conciliados"
 
@@ -118,6 +113,22 @@ msgid "Journal Item"
 msgstr "Apunte contable"
 
 #. module: account_payment_partner
+#: model:ir.model.fields,field_description:account_payment_partner.field_res_company__keep_partner_bank_without_payment_mode
+#: model:ir.model.fields,field_description:account_payment_partner.field_res_config_settings__keep_partner_bank_without_payment_mode
+msgid "Keep Bank Account Without Payment Mode"
+msgstr "Mantener cuenta bancaria sin modo de pago"
+
+#. module: account_payment_partner
+#: model_terms:ir.ui.view,arch_db:account_payment_partner.res_config_settings_view_form
+msgid ""
+"Keep the bank account auto-selected by Odoo on invoices without a payment "
+"mode. Disable to clear the bank account when no payment mode is set."
+msgstr ""
+"Mantener la cuenta bancaria seleccionada automáticamente por Odoo en "
+"facturas sin modo de pago. Desactivar para limpiar la cuenta bancaria cuando "
+"no hay modo de pago establecido."
+
+#. module: account_payment_partner
 #: model:ir.model.fields.selection,name:account_payment_partner.selection__account_payment_mode__show_bank_account__last
 msgid "Last n chars"
 msgstr "Últimos n caracteres"
@@ -130,14 +141,12 @@ msgstr "No"
 #. module: account_payment_partner
 #. odoo-python
 #: code:addons/account_payment_partner/tests/test_account_payment_partner.py:0
-#, python-format
 msgid "No Chart of Account Template has been defined !"
 msgstr "No se ha definido un Plan Contable!"
 
 #. module: account_payment_partner
 #: model:ir.model.fields,field_description:account_payment_partner.field_account_bank_statement_line__partner_bank_filter_type_domain
 #: model:ir.model.fields,field_description:account_payment_partner.field_account_move__partner_bank_filter_type_domain
-#: model:ir.model.fields,field_description:account_payment_partner.field_account_payment__partner_bank_filter_type_domain
 msgid "Partner Bank Filter Type Domain"
 msgstr "Dominio del tipo de filtro del banco asociado"
 
@@ -145,7 +154,6 @@ msgstr "Dominio del tipo de filtro del banco asociado"
 #: model:ir.model.fields,field_description:account_payment_partner.field_account_bank_statement_line__payment_mode_id
 #: model:ir.model.fields,field_description:account_payment_partner.field_account_move__payment_mode_id
 #: model:ir.model.fields,field_description:account_payment_partner.field_account_move_line__payment_mode_id
-#: model:ir.model.fields,field_description:account_payment_partner.field_account_payment__payment_mode_id
 #: model_terms:ir.ui.view,arch_db:account_payment_partner.view_account_invoice_filter
 #: model_terms:ir.ui.view,arch_db:account_payment_partner.view_account_invoice_report_search
 msgid "Payment Mode"
@@ -154,7 +162,6 @@ msgstr "Modo de pago"
 #. module: account_payment_partner
 #: model:ir.model.fields,field_description:account_payment_partner.field_account_bank_statement_line__payment_mode_filter_type_domain
 #: model:ir.model.fields,field_description:account_payment_partner.field_account_move__payment_mode_filter_type_domain
-#: model:ir.model.fields,field_description:account_payment_partner.field_account_payment__payment_mode_filter_type_domain
 msgid "Payment Mode Filter Type Domain"
 msgstr "Dominio de Tipo de Pago Modo Filtro"
 
@@ -177,12 +184,6 @@ msgstr "Modo de pago para rectificaciones"
 #: model_terms:ir.ui.view,arch_db:account_payment_partner.view_move_line_form
 msgid "Payments"
 msgstr "Pagos"
-
-#. module: account_payment_partner
-#: model:ir.model.fields,field_description:account_payment_partner.field_account_bank_statement_line__partner_bank_id
-#: model:ir.model.fields,field_description:account_payment_partner.field_account_move__partner_bank_id
-msgid "Recipient Bank"
-msgstr "Banco destinatario"
 
 #. module: account_payment_partner
 #: model:ir.model.fields,help:account_payment_partner.field_res_partner__customer_payment_mode_id
@@ -216,6 +217,11 @@ msgid "Show in invoices partial or full bank account number"
 msgstr "Mostrar en facturas nº de cuenta bancaria parcial o completo"
 
 #. module: account_payment_partner
+#: model:res.groups,name:account_payment_partner.group_show_account_payment_method
+msgid "Show the default payment method line in contacts"
+msgstr "Mostrar la línea de método de pago predeterminada en contactos"
+
+#. module: account_payment_partner
 #: model:ir.model.fields,field_description:account_payment_partner.field_res_partner__supplier_payment_mode_id
 #: model:ir.model.fields,field_description:account_payment_partner.field_res_users__supplier_payment_mode_id
 msgid "Supplier Payment Mode"
@@ -224,7 +230,6 @@ msgstr "Modo de pago de proveedor"
 #. module: account_payment_partner
 #: model:ir.model.fields,help:account_payment_partner.field_account_bank_statement_line__has_reconciled_items
 #: model:ir.model.fields,help:account_payment_partner.field_account_move__has_reconciled_items
-#: model:ir.model.fields,help:account_payment_partner.field_account_payment__has_reconciled_items
 msgid "Technical field for supporting the editability of the payment mode"
 msgstr ""
 "Campo técnico para la gestión sobre la opción de edición del modo de pago"
@@ -239,9 +244,20 @@ msgstr ""
 "provenientes del modo de pago actual."
 
 #. module: account_payment_partner
+#: model:ir.model.fields,help:account_payment_partner.field_res_company__keep_partner_bank_without_payment_mode
+#: model:ir.model.fields,help:account_payment_partner.field_res_config_settings__keep_partner_bank_without_payment_mode
+msgid ""
+"When enabled, invoices without a payment mode will keep the bank account "
+"auto-selected by Odoo. When disabled, the bank account will be cleared if no "
+"payment mode is set."
+msgstr ""
+"Cuando está activado, las facturas sin modo de pago mantendrán la cuenta "
+"bancaria seleccionada automáticamente por Odoo. Cuando está desactivado, la "
+"cuenta bancaria se borrará si no hay modo de pago establecido."
+
+#. module: account_payment_partner
 #. odoo-python
 #: code:addons/account_payment_partner/models/account_payment_mode.py:0
-#, python-format
 msgid ""
 "You cannot change the Company. There exists at least one Journal Entry with "
 "this Payment Mode, already assigned to another Company."
@@ -252,13 +268,25 @@ msgstr ""
 #. module: account_payment_partner
 #. odoo-python
 #: code:addons/account_payment_partner/models/account_payment_mode.py:0
-#, python-format
 msgid ""
 "You cannot change the Company. There exists at least one Journal Item with "
 "this Payment Mode, already assigned to another Company."
 msgstr ""
 "No puede cambiar la Compañía. Existe como mínimo una elemento del Diario con "
 "este Modo de Pago que ya está asignado a otra Compañía."
+
+#~ msgid ""
+#~ "Bank Account Number to which the invoice will be paid. A Company bank "
+#~ "account if this is a Customer Invoice or Vendor Credit Note, otherwise a "
+#~ "Partner bank account number."
+#~ msgstr ""
+#~ "Número de cuenta bancaria a la que se pagará la factura. Una cuenta "
+#~ "bancaria de la empresa si se trata de una factura de cliente o una nota "
+#~ "de crédito de proveedor; de lo contrario, un número de cuenta bancaria "
+#~ "del contacto."
+
+#~ msgid "Recipient Bank"
+#~ msgstr "Banco destinatario"
 
 #~ msgid "Display Name"
 #~ msgstr "Nombre Mostrado"
